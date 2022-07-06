@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->date('time')->unique();
+            $table->dateTime('time')->unique();
             $table->foreignId('user_id')
            ->constrained('users')
            ->onUpdate('cascade')
