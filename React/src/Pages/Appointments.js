@@ -1,7 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../layouts/Navbar'
 
 function Appointments() {
+
+    useEffect(() => {
+        async function getUser(id){
+            const res = await fetch(`http://127.0.0.1:8000/api/getuser/${id}`)
+            const user = await res.json()
+            setFormData((oldData => {
+                return {
+                    ...oldData,
+                    firstname:user.firstname,
+                    lastname:user.lastname,
+                    email:user.email,
+                    phonenumber:user.phonenumber,
+                    age:user.age,
+                    user_id: user.id
+                }
+            }))
+        }
+        getUser(1)
+    },[])
 
     function pad2(n) {
         return (n < 10 ? '0' : '') + n;
@@ -11,31 +30,25 @@ function Appointments() {
     var day = pad2(date.getDate());
     var year = date.getFullYear();
     //test data
-    const data = {
-        id: '1',
-        firstname: 'abdallah',
-        lastname: 'alhasan',
-        phonenumber: '0777777777',
-        email: 'abdallah@gmail.com',
-        age: '24'
-    }
     const [formData, setFormData] = useState({
+        user_id : '',
         firstname: '', //reminder to change the values after fetching user info
         lastname: '',
         phonenumber: '',
         email: '',
         age: '',
         message: '',
-        date: '',
+        time: '',
         allergy1:'',
         allergy2:'',
         allergy3:'',
-        whitening:'',
-        cavity_filling:'',
-        full_braces:'',
-        capping:'',
-        implants:'',
-        root_canal:'',
+        // whitening:'',
+        // cavity_filling:'',
+        // full_braces:'',
+        // capping:'',
+        // implants:'',
+        // root_canal:'',
+        services:''
     })
 
     const handleChange = (event) => {
@@ -43,10 +56,28 @@ function Appointments() {
         setFormData((oldData) => {
             return {
                 ...oldData,
-                [name]: type === 'checkbox' ? checked : value 
+                [name]: type === 'checkbox' ? checked : value,
             }
         })
     }
+
+    const handleClick = (event) => {
+        event.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        };
+        async function addAppointment(){
+            const res  = await fetch('http://127.0.0.1:8000/api/addappointment', requestOptions)
+            const data = await res.json()
+        }
+        
+        addAppointment()
+            
+        }
+    
+
     console.log(formData)
     return (
         <React.Fragment>
@@ -88,7 +119,7 @@ function Appointments() {
                                             class="form-control"
                                             type="text" placeholder="Your First Name"
                                             name='firstname'
-                                            value={formData.firstname ? formData.firstname : data.firstname}
+                                            value={formData.firstname}
                                             onChange={handleChange}
 
                                         />
@@ -100,7 +131,7 @@ function Appointments() {
                                             class="form-control"
                                             type="text" placeholder="Your Last Name"
                                             name='lastname'
-                                            value={formData.lastname ? formData.lastname : data.lastname}
+                                            value={formData.lastname}
                                             onChange={handleChange}
 
                                         />
@@ -115,7 +146,7 @@ function Appointments() {
                                             type="text"
                                             placeholder="Your Phone Number"
                                             name='phonenumber'
-                                            value={formData.phonenumber ? formData.phonenumber : data.phonenumber}
+                                            value={formData.phonenumber}
                                             onChange={handleChange}
 
                                         />
@@ -127,7 +158,7 @@ function Appointments() {
                                             class="form-control"
                                             type="text" placeholder="Your Email ID"
                                             name='email'
-                                            value={formData.email ? formData.email : data.email}
+                                            value={formData.email}
                                             onChange={handleChange}
 
                                         />
@@ -141,7 +172,7 @@ function Appointments() {
                                             class="form-control date-select"
                                             type="text" placeholder="Enter your age"
                                             name='age'
-                                            value={formData.age ? formData.age : data.age}
+                                            value={formData.age}
                                             onChange={handleChange}
 
                                         />
@@ -152,7 +183,7 @@ function Appointments() {
                                         <select
                                             class="form-control"
                                             tabindex="-98"
-                                            name='date'
+                                            name='time'
                                             value={formData.date}
                                             onChange={handleChange}
                                         >
@@ -171,7 +202,7 @@ function Appointments() {
                                                 class="form-control"
                                                 placeholder="Allergy 1"
                                                 name='allergy1'
-                                                value={formData.allergy1 ? formData.allergy1 : data.allergy1}
+                                                value={formData.allergy1}
                                                 onChange={handleChange}
 
                                             />
@@ -181,7 +212,7 @@ function Appointments() {
                                                 class="form-control"
                                                 placeholder="Allergy 2"
                                                 name='allergy2'
-                                                value={formData.allergy2 ? formData.allergy2 : data.allergy2}
+                                                value={formData.allergy2}
                                                 onChange={handleChange}
 
                                             />
@@ -191,7 +222,7 @@ function Appointments() {
                                                 class="form-control"
                                                 placeholder="Allergy 3"
                                                 name='allergy3'
-                                                value={formData.allergy3 ? formData.allergy3 : data.allergy3}
+                                                value={formData.allergy3}
                                                 onChange={handleChange}
 
                                             />
@@ -250,7 +281,7 @@ function Appointments() {
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary" type="submit"><i class="ion-paper-plane-outline icon-left"></i> Book Appointment</button>
+                                <button class="btn btn-primary" type="submit" onClick={handleClick}><i class="ion-paper-plane-outline icon-left"></i> Book Appointment</button>
                             </div>
                         </form>
                     </div>
