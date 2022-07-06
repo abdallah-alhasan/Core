@@ -5,6 +5,7 @@ import {BrowserRouter as Router , Routes, Route} from 'react-router-dom'
 import Appointments from './Pages/Appointments';
 import Register from './Pages/Register';
 import Login from './Pages/Login'
+import Profile from './Pages/Profile'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login/>} />
           <Route path='/register' element={<Register />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/' element={<Home />} />
           <Route path='/book-an-appointment' element={<Appointments />} />
           {/* enter your routes here */}
