@@ -48,9 +48,9 @@ class AppointmentController extends Controller
             'age',
             'message',
             'time',
-            'allergy',
-            'allergy',
-            'allergy',
+            'allergy1',
+            'allergy2',
+            'allergy3',
             'services',
             'user_id'
             ]);

@@ -32,7 +32,7 @@ function Appointments() {
     //test data
     const [formData, setFormData] = useState({
         user_id : '',
-        firstname: '', //reminder to change the values after fetching user info
+        firstname: '', 
         lastname: '',
         phonenumber: '',
         email: '',
@@ -42,7 +42,7 @@ function Appointments() {
         allergy1:'',
         allergy2:'',
         allergy3:'',
-        // whitening:'',
+        // whitening:'', REMINDER TO FIX THIS PUG
         // cavity_filling:'',
         // full_braces:'',
         // capping:'',
