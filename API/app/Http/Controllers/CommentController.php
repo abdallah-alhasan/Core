@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\comment;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -24,7 +24,9 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+       return Comment::join('users', 'users.id', '=', 'comments.user_id')
+        ->get(['comments.*', 'users.username']);
+    //    return Comment::all();
     }
 
     /**
@@ -35,7 +37,9 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment=new Comment();
+        $comment->comment=$request->comment;
+        $comment->save();
     }
 
     /**
@@ -44,9 +48,10 @@ class CommentController extends Controller
      * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(comment $comment)
+    public function show($id)
+
     {
-        //
+             return Comment::find($id);
     }
 
     /**
@@ -78,8 +83,8 @@ class CommentController extends Controller
      * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(comment $comment)
+    public function destroy($id)
     {
-        //
+        return Comment::destroy($id);
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Appointment;
+use App\Models\User;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 
-class AppointmentController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,12 +24,8 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        return Appointment::join('users', 'users.id', '=', 'appointments.user_id')
-        ->get(['appointments.*', 'users.username']);
+        return User::all();
 
-
-        // return Appointment::join('users', 'users.id', '=', 'appointments.user_id')
-        // ->get(['appointments.*', 'users.*']);
     }
 
     /**
@@ -40,30 +36,36 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $Appointment=new Appointment();
-        $Appointment->dateTime=$request->dateTime;
-        $Appointment->save();
+        $user=new User();
+
+        $user->username=$request->username;
+        $user->password=$request->password;
+        $user->email=$request->email;
+        $user->phonenumber=$request->phonenumber;
+        $user->age=$request->age;
+
+        $user->save();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\appointment  $appointment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Appointment::find($id);
-        
+        return User::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\appointment  $appointment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(appointment $appointment)
+    public function edit($id)
     {
         //
     }
@@ -72,24 +74,30 @@ class AppointmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\appointment  $appointment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $UpAppointment=new Appointment();
-        $UpAppointment->dateTime=$request->updateTime;
-        $UpAppointment->save();
+       $upUser = User::find($id);
+       $upUser->username=$request->upusername;
+       $upUser->password=$request->uppassword;
+       $upUser->email=$request->upemail;
+       $upUser->phonenumber=$request->upphonenumber;
+       $upUser->age=$request->upage;
+
+       $upUser->save();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\appointment  $appointment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-       return Appointment::destroy($id);
+       return User::destroy($id);
+
     }
 }
