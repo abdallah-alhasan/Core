@@ -1,5 +1,7 @@
-
+import { useNavigate } from 'react-router-dom';
+import Login from './Login';
 function Register() {
+  const navigate = useNavigate();
   return (
     <>
       {/* <!-- Section: Design Block --> */}
@@ -61,10 +63,13 @@ function Register() {
                       <button type="submit" className="btn btn-primary btn-block mb-4">
                         Sign up
                       </button>
-
+                    <div className="text-center my-3 display-5 fw-bold ls-tight">
+                      OR : 
+                    </div>
                       {/* <!-- Register buttons --> */}
-                      <div className="text-center">
-                      <button type="submit" className="btn btn-primary btn-block mb-4">
+                    <div className="text-center">
+                      
+                      <button type="submit" className="btn btn-primary btn-block mb-4" onClick={()=>navigate('/login')}>
                         Login
                       </button>
                       </div>
