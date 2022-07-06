@@ -95,7 +95,7 @@ function Home() {
                         <i class="mw-dental-seat"></i>
                     </div>
                     <div class="body mt-20">
-                        <h4 class="heading font-bold">Full Br/aces</h4>
+                        <h4 class="heading font-bold">Full Braces</h4>
                         <p class="mb-0 mb-10">Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                         <a href="/" class="link-primary">More Info..</a>
                     </div>
