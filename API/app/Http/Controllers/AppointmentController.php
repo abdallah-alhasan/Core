@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\appointment;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -24,7 +24,12 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        //
+        return Appointment::join('users', 'users.id', '=', 'appointments.user_id')
+        ->get(['appointments.*', 'users.username']);
+
+
+        // return Appointment::join('users', 'users.id', '=', 'appointments.user_id')
+        // ->get(['appointments.*', 'users.*']);
     }
 
     /**
@@ -35,7 +40,21 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname', //reminder to change the values after fetching user info
+            'lastname',
+            'phonenumber',
+            'email',
+            'age',
+            'message',
+            'time',
+            'allergy1',
+            'allergy2',
+            'allergy3',
+            'services',
+            'user_id'
+            ]);
+            return Appointment::create($request->all());
     }
 
     /**
@@ -44,9 +63,10 @@ class AppointmentController extends Controller
      * @param  \App\Models\appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function show(appointment $appointment)
+    public function show($id)
     {
-        //
+        return Appointment::find($id);
+        
     }
 
     /**
@@ -67,9 +87,11 @@ class AppointmentController extends Controller
      * @param  \App\Models\appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, appointment $appointment)
+    public function update(Request $request, $id)
     {
-        //
+        $UpAppointment=new Appointment();
+        $UpAppointment->dateTime=$request->updateTime;
+        $UpAppointment->save();
     }
 
     /**
@@ -78,8 +100,8 @@ class AppointmentController extends Controller
      * @param  \App\Models\appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(appointment $appointment)
+    public function destroy($id)
     {
-        //
+       return Appointment::destroy($id);
     }
 }
