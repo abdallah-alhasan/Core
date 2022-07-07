@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         <React.Fragment>
-            {/* <div class="loader-backdrop">           
+            <div class="loader-backdrop">           
         <div class="loader">
             <i class="ion-heart-outline"></i>
         </div>
     </div>
-     */}
+    
             <header class="header-1">
                 <div class="topbar">
                     <div class="container-lg">
@@ -57,12 +57,12 @@ function Navbar() {
                                 <li class="nav-item has-menu"><Link to="/">Home</Link>
 
                                 </li>
-                                <li class="nav-item has-menu"><Link to="/book-an-appointment">Appointments</Link></li>
-                                <li class="nav-item has-menu"><Link to="/profile">Profile</Link></li>
-                                <li class="nav-item has-menu"><Link to="/About">About</Link></li>
-                                <li class="nav-item has-menu"><Link to="/contact">Contact</Link></li>
-                                <li class="nav-item has-menu"><Link to="/Login">Login</Link></li>
-                                <li class="nav-item has-menu"><Link to="/register">Register</Link></li>
+                                <li class="nav-item has-menu"><a href="/book-an-appointment">Appointments</a></li>
+                                <li class="nav-item has-menu"><a href="/profile">Profile</a></li>
+                                <li class="nav-item has-menu"><a href="/About">About</a></li>
+                                <li class="nav-item has-menu"><a href="/contact">Contact</a></li>
+                                <li class="nav-item has-menu"><a href="/Login">Login</a></li>
+                                <li class="nav-item has-menu"><a href="/register">Register</a></li>
 
                             </ul>
                         </div>

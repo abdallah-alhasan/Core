@@ -9,6 +9,7 @@ import Profile from './Pages/Profile'
 import About from './Pages/About'
 import ContactUs from './Pages/ContactUs';
 import Navbar from './layouts/Navbar';
+import Footer from './layouts/Footer'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           {/* enter your routes here */}
           <Route path='*' element={<Error />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

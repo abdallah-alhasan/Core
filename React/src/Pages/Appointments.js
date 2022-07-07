@@ -322,6 +322,7 @@ function Appointments() {
                     </div>
                 </div>
             </div>
+        
         </React.Fragment>
     )
 }
