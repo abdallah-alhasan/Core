@@ -35,10 +35,8 @@ function About() {
             <div class="col-lg-6 mt-20 pr-30">
                 <h6 class="heading font-bold text-primary">Brief History</h6>
                 <h3 class="heading font-bold">Get to know us more</h3>
-                <p class="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="lead">American Dental Clinic is unique and distinctive because we incorporate skill, experience and technology under one roof. The work of our highly competent doctors of varying disciplines of dentistry, coupled with the use of the latest equipment and technologies ensures that each patient is treated like royalty</p>
+              
             </div>
             <div class="col-lg-6 mt-20">
                 <img src="images/750-500-2.jpg" class="img-fluid" alt="" />
@@ -117,22 +115,16 @@ function About() {
 
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade show active" id="t1body1">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            <p>At the Medwise Dental our foundation lies in our ideology. We understand the complexities of dental problems and the absolute need to tackle them with utmost care, which is why our clinics consist of some of the most highly reputable doctors in the UAE, and are equipped with state of the art equipment. We ensure that no stone is left unturned in providing our patients with the best healthcare facilities.</p>
+                            {/* <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                 consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
+                            </p> */}
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="t1body2">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
+                            <p>Since 1985 our clinics in Dubai and Abu Dhabi have provided patients with the finest dental care treatments in UAE. Our team of highly skilled specialists, consisting of dentists and hygienists are led by Dr. Michael Ziegler in their commitment to excellence. Each of our clinics is equipped to provide a complete range of treatments; including general dentistry, state-of-the-art cosmetic dentistry, dental implants, prosthetics, children’s dentistry, veneer placements and othrodontics</p>
+                          
                         </div>
                     </div>
                 </div>
