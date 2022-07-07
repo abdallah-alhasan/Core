@@ -1,28 +1,12 @@
 
-import { useEffect, useState } from 'react'
-import Footer from '../layouts/Footer'
-import Navbar from '../layouts/Navbar'
-import { Link } from 'react-router-dom'
+
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
-import axios from 'axios'
+
 
 
 function ContactUs() {
 
-
-    //https://jsonplaceholder.typicode.com/todos/
-
-    // const [name,setName] = useState('');
-    // const [email,setEmail] = useState('');
-    // const [message,setMessage] = useState('');
-
-
-
-    // const postData  = (e) => {
-
-    //     e.preventDefault();
-    // }
     const form = useRef();
 
      function sendEmail(e) {
@@ -38,15 +22,9 @@ function ContactUs() {
 
     }
 
-
-
-
-
-
-
-
     return (
-        <div className='app'>
+      
+      <>
             <div class="page-header">
                 <div class="container">
                     <div class="row">
@@ -60,7 +38,7 @@ function ContactUs() {
                         <div className="row">
                             <div className="col-lg-12">
                                 <ul className="breadcrumb">
-                                    <li><Link to="/">Home</Link></li>
+                                    <li><a href="/">Home</a></li>
                                     <li className="active">Contact US</li>
                                 </ul>
                             </div>
@@ -162,8 +140,10 @@ function ContactUs() {
             </div>
 
 
-            <Footer />
-        </div>
+           
+
+
+        </>
 
     )
 }

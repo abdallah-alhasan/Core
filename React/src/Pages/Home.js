@@ -1,12 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from '../layouts/Navbar'
+
+
+
 
 function Home() {
     return (
-        <>
-        
-            <div className="pt-120 pb-120" style={{ backgroundImage: 'url(images/1920-800-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center left' }} >
+     <div className='App'>
+            
+   
+   <div className="pt-120 pb-120" style={{ backgroundImage: 'url(images/1920-800-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center left' }} >
                 <div className="container">
                     <div className="row justify-content-end">
                         <div className="col-lg-6 text-left">
@@ -143,7 +144,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="pt-80 pb-80 mt-80" style={{ backgroundImage: "url('images/200-200-1.jpg')" }} >
+            {/* <div className="pt-80 pb-80 mt-80" style={{ backgroundImage: "url('images/200-200-1.jpg')" }} >
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-8 text-center">
@@ -206,7 +207,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="container mt-80">
                 <div className="row justify-content-center">
@@ -259,7 +260,7 @@ function Home() {
                             <h3 className="heading text-white font-bold">Best Dental Services In Jordan</h3>
                             <h5 className="text-white">Know everything about dentistry, stay and the procedures</h5>
                             <p className="text-white opacity-08 mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <Link to='/Contact' className="btn btn-secondary">Get in Touch</Link>
+                            <a href='/Contact' className="btn btn-secondary">Get in Touch</a>
                         </div>
                         <div className="col-lg-3 mt-20 mb-lg-40">
                             <div className="counter-box-1">
@@ -347,118 +348,17 @@ function Home() {
                             <p className="h5 text-center text-lg-left mb-0">Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
                         <div className="col-lg-5 mt-20 mb-20 text-center">
-                            <Link to='/Contact' className="btn btn-primary btn-lg mr-20">Get in Touch</Link>
+                            <a href='/Contact' className="btn btn-primary btn-lg mr-20">Get in Touch</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <footer className="footer-2">
-                <div className="footer-pri">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="widget widget-about">
-                                    <a href="/ndex-hospital-classNameic.html">
-                                        <img src="images/logo-light.svg" className="logo-footer" alt="" />
-                                    </a>
-                                    <p className="mt-20 footer-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                           
-                            
-                                
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                          
-                           
-                        
-                                <div className="widget widget-twitter">
-                                    <h5 className="heading font-bold">Latest Tweet</h5>
-                                    <div className="tweets">
-                                        <ul className="carousel-items">
-                                            <li className="tweet-item">
-                                                <p>How to tell if the hand sanitizer you’re buying is safe and actually works? <a href="/">#askDoctor</a></p>
-                                            </li>
-                                            <li className="tweet-item">
-                                                <p>Screen time doesn’t hurt kids’ social skills, says harvard university <a href="/">#healthcare #dailyTips</a></p>
-                                            </li>
-                                            <li className="tweet-item">
-                                                <p>Can clothes and shoes track infection into your house? What to Know <a href="/">Read blog here</a></p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="/" className="btn btn-outline-light curved btn-sm mt-10">Follow Us</a>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                               
-                                <div className="widget widget-timings">
-                                    <h5 className="heading font-bold">Hospital Timings</h5>
-                                    <table className="table table-bordered footer-text">
-                                        <tr>
-                                            <td>Mon - Fri</td>
-                                            <td>9:00 am to 6:00 pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Saturday</td>
-                                            <td>10:00 am to 1:00 pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sunday</td>
-                                            <td>Weekly Off</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                        
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="footer-sec">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 mt-10 mb-10">
-                                <ul className="misc-links">
-                                    <li>
-                                        <a href="/">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Terms & Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Usage Rights</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="col-lg-6 mt-10 mb-10 text-right">
-                                <p className="mb-0 footer-text text-lg-right text-center">&copy; 2022 All Rights Reserved.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+          
 
          
-            <div className="modal fade zoom-in" id="modal-video" data-open-onload="false" tabindex="-1" role="dialog">
-                <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div className="modal-content">
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close"><i className="ion-close-sharp"></i></button>
-                        <div className="modal-body">
-                            <div className="container-fluid p-0">
-                                <div className="row no-gutters">
-                                    <div className="col-lg-12">
-                                        <div id="video-container"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
+     
+        </div>
     )
 }
 

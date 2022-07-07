@@ -12,7 +12,7 @@ function Profile() {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="heading bold">Doctor Detail 1</h1>
+                            <h1 class="heading bold text-left">Profile</h1>
                         </div>
                     </div>
                 </div>
@@ -21,8 +21,8 @@ function Profile() {
                         <div class="row">
                             <div class="col-lg-12">
                                 <ul class="breadcrumb">
-                                    <li><a href="index-hospital-classic.html">Home</a></li>
-                                    <li class="active">Doctor Detail 1</li>
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active">Profile</li>
                                 </ul>
                             </div>
                         </div>
@@ -134,8 +134,7 @@ function Profile() {
                         <h5 class="heading font-bold text-primary">Get in Touch</h5>
                         <h3 class="heading font-bold">Book your appointment</h3>
                         <p class="h5 mb-30">Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p class="h6 d-flex align-items-top opacity-08"><i class="ion-location-outline icon-left text-primary"></i>5th Floor, Ameritrunk Building,<br /> Times Square, USA-12435</p>
-                        <p class="h6 d-flex align-items-center opacity-08"><i class="ion-call-outline icon-left text-primary"></i>213-562-5625</p>
+                    
                         <ul class="social social-2x d-inline-flex mt-20">
                             <li><a class="facebook" href="#"><i class="ion-logo-facebook"></i></a></li>
                             <li><a class="twitter" href="#"><i class="ion-logo-twitter"></i></a></li>
@@ -188,7 +187,7 @@ function Profile() {
                 </div>
             </div>
 
-            <Footer />
+     
         </div>
     )
 }

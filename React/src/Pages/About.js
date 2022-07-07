@@ -198,7 +198,7 @@ function About() {
   
 
 
-    <Footer />
+ 
     </div>
   )
 }
