@@ -47,9 +47,6 @@ function ContactUs() {
 
     return (
         <div className='app'>
-            <Navbar />
-
-
             <div class="page-header">
                 <div class="container">
                     <div class="row">

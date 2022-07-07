@@ -8,13 +8,15 @@ import Login from './Pages/Login'
 import Profile from './Pages/Profile'
 import About from './Pages/About'
 import ContactUs from './Pages/ContactUs';
+import Navbar from './layouts/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar/>
         <Routes>
-          <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login/>} />
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/' element={<Home />} />

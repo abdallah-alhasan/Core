@@ -6,8 +6,6 @@ import Navbar from '../layouts/Navbar'
 function About() {
   return (
     <div className='app'>
-    <Navbar />
-
     <div class="page-header">          
         <div class="container">
             <div class="row">
