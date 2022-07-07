@@ -187,7 +187,7 @@ function Appointments() {
                                     <div className="form-group">
                                         <select
                                             className="form-control"
-                                            tabindex="-98"
+                                            tabIndex="-98"
                                             name='time'
                                             value={formData.date}
                                             onChange={handleChange}
@@ -242,37 +242,37 @@ function Appointments() {
                                                 <input type="checkbox" className="custom-control-input" name='whitening' id="Whitening" checked={formData.whitening}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="Whitening">Whitening</label>
+                                                <label className="custom-control-label" htmlFor="Whitening">Whitening</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='cavity_filling' id="cavity_filling" value={formData.cavity_filling}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="cavity_filling">Cavity Filling</label>
+                                                <label className="custom-control-label" htmlFor="cavity_filling">Cavity Filling</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='full_braces' id="full_braces" value={formData.full_braces}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="full_braces">Full Braces</label>
+                                                <label className="custom-control-label" htmlFor="full_braces">Full Braces</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input"name='root_canal' id="root_canal" value={formData.root_canal}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="root_canal">Root Canal</label>
+                                                <label className="custom-control-label" htmlFor="root_canal">Root Canal</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='implants' value={formData.implants} id="implants" 
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="implants">Implants</label>
+                                                <label className="custom-control-label" htmlFor="implants">Implants</label>
                                             </div>
                                             <div className="custom-control custom-checkbox">
                                                 <input type="checkbox" className="custom-control-input" name='capping' value={formData.capping} id="capping" 
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="capping">Capping</label>
+                                                <label className="custom-control-label" htmlFor="capping">Capping</label>
                                             </div>
                                         </div>
                                     </fieldset>
