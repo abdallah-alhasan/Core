@@ -32,7 +32,7 @@ function Appointments() {
     //test data
     const [formData, setFormData] = useState({
         user_id : '',
-        firstname: '', //reminder to change the values after fetching user info
+        firstname: '', 
         lastname: '',
         phonenumber: '',
         email: '',
@@ -42,7 +42,7 @@ function Appointments() {
         allergy1:'',
         allergy2:'',
         allergy3:'',
-        // whitening:'',
+        // whitening:'', REMINDER TO FIX THIS PUG
         // cavity_filling:'',
         // full_braces:'',
         // capping:'',
@@ -81,14 +81,11 @@ function Appointments() {
     console.log(formData)
     return (
         <React.Fragment>
-
-            <Navbar />
-
-            <div className="page-header">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <h1 className="heading bold text-left">Book Appointment</h1>
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="heading bold">Book Appointment</h1>
                         </div>
                     </div>
                 </div>

@@ -46,15 +46,12 @@ function ContactUs() {
 
 
     return (
-        <div classNameName='app'>
-            <Navbar />
-
-
-            <div className="page-header">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <h1 className="heading bold text-left">Contact Us</h1>
+        <div className='app'>
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="heading bold text-left">Contact Us</h1>
                         </div>
                     </div>
                 </div>
