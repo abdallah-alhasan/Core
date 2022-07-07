@@ -2,14 +2,24 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
-  const [email, setEmail] = useState('');
+
+  const [data,setData]= useState({fname:'',lname:'',email:'',password:''});
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const handelSubmit = () => {
-
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    return fetch('http://127.0.0.1:8000/api/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(data => data.json())
+  
   }
+
+  
 
   return (
     <>
@@ -35,20 +45,20 @@ function Register() {
             <div className="col-lg-6 mb-5 mb-lg-0">
               <div className="card">
                 <div className="card-body py-5 px-md-5">
-                  <img src="images/logo.svg" alt="" class="logo" style={{ marginBottom: '30px' }} />
+                  <img src="images/logo.svg" alt="" className="logo" style={{ marginBottom: '30px' }} />
 
-                  <form onSubmit={handelSubmit}>
+                  <form onSubmit={handelSubmit}  >
                     {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
                     <div className="row">
                       <div className="col-md-6 mb-4">
                         <div className="form-outline">
-                          <input type="text" id="form3Example1" className="form-control" placeholder='First name' value={fname} onChange={(e)=>setFname(e.target.value)} />
+                          <input type="text" id="form3Example1" className="form-control" placeholder='First name'  onChange={(e) => setData(e.target.value)} />
                           {/* <label className="form-label" for="form3Example1">First name</label> */}
                         </div>
                       </div>
                       <div className="col-md-6 mb-4">
                         <div className="form-outline">
-                          <input type="text" id="form3Example2" className="form-control" placeholder='Last name' value={lname} onChange={(e) => setLname(e.target.value)} />
+                          <input type="text" id="form3Example2" className="form-control" placeholder='Last name' onChange={(e) => setData(e.target.value)} />
                           {/* <label className="form-label" for="form3Example2">Last name</label> */}
                         </div>
                       </div>
@@ -56,13 +66,13 @@ function Register() {
 
                     {/* <!-- Email input --> */}
                     <div className="form-outline mb-4">
-                      <input type="email" id="form3Example3" className="form-control" placeholder='Email address' value={email} onChange={(e)=>setEmail(e.target.value)} />
+                      <input type="email" id="form3Example3" className="form-control" placeholder='Email address' onChange={(e) => setData(e.target.value)} />
                       {/* <label className="form-label" for="form3Example3">Email address</label> */}
                     </div>
 
                     {/* <!-- Password input --> */}
                     <div className="form-outline mb-4">
-                      <input type="password" id="form3Example4" className="form-control" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                      <input type="password" id="form3Example4" className="form-control" placeholder='Password' onChange={(e) => setData(e.target.value)} />
                       {/* <label className="form-label" for="form3Example4">Password</label> */}
                     </div>
 
