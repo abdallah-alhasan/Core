@@ -19,7 +19,7 @@ use App\Http\Controllers\AppointmentController;
 */
 //***********User routes ********************************/
 Route::post('adduser',[UserController::class,'store']);
-Route::get('getallusers',[UserController::class,'create']);
+Route::get('getallusers',[UserController::class,'index']);
 Route::get('getuser/{id}',[UserController::class,'show']);
 Route::post('updateuser/{id}',[UserController::class,'update']);
 Route::get('destroyUser/{id}',[UserController::class,'destroy']);

@@ -57,24 +57,13 @@ function Navbar() {
                                 <li class="nav-item has-menu"><Link to="/">Home</Link>
 
                                 </li>
-                                <li class="nav-item has-menu"><Link to="/About">About</Link>
+                                <li class="nav-item has-menu"><Link to="/book-an-appointment">Appointments</Link></li>
+                                <li class="nav-item has-menu"><Link to="/profile">Profile</Link></li>
+                                <li class="nav-item has-menu"><Link to="/About">About</Link></li>
+                                <li class="nav-item has-menu"><Link to="/contact">Contact</Link></li>
+                                <li class="nav-item has-menu"><Link to="/Login">Login</Link></li>
+                                <li class="nav-item has-menu"><Link to="/register">Register</Link></li>
 
-                                </li>
-                                <li class="nav-item has-menu"><a href="/">Services</a>
-                                </li>
-
-                                <li class="nav-item has-menu"><a href="/">Blog</a>
-                                    <div class="sub-menu">
-                                        <ul class="menu-items">
-                                            <li><a href="/log-list.html">Blog List</a></li>
-                                            <li><a href="/log-single.html">Blog Single</a></li>
-                                            <li><a href="/idgets.html">Sidebar Widgets</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item has-menu"><Link to="/Contact">Contact</Link>
-
-                                </li>
                             </ul>
                         </div>
                     </div>

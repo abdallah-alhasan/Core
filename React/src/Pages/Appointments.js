@@ -81,9 +81,6 @@ function Appointments() {
     console.log(formData)
     return (
         <React.Fragment>
-
-            <Navbar />
-
             <div class="page-header">
                 <div class="container">
                     <div class="row">

@@ -5,7 +5,6 @@ import Navbar from '../layouts/Navbar'
 function Home() {
   return (
     <>
-    <Navbar/>
     <div class="pt-120 pb-120" style={{backgroundImage: 'url(images/1920-800-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center left'}} >
         <div class="container">
             <div class="row justify-content-end">
