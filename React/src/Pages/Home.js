@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../layouts/Navbar'
 
 function Home() {
@@ -8,9 +9,9 @@ function Home() {
     <div class="pt-120 pb-120" style={{backgroundImage: 'url(images/1920-800-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center left'}} >
         <div class="container">
             <div class="row justify-content-end">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-left">
                     <h4 class="heading text-primary font-semi-bold mb-10"> Dental clinic</h4>
-                    <h3 class="heading font-20 text-lh-2 font-bold mb-20">Get Your Smile <br/> Back <span class="text-primary font-semi-bold">:)</span></h3>
+                    <h3 class="heading font-20 text-lh-2 font-bold mb-20 ">Get Your Smile  Back <span class="text-primary font-semi-bold">:)</span></h3>
                     <p class="text-lh-6 mb-30">Excepteur sint occaecat cupidatat non
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <p class="h6 d-flex align-items-center font-semi-bold mb-0">
@@ -94,7 +95,7 @@ function Home() {
                         <i class="mw-dental-seat"></i>
                     </div>
                     <div class="body mt-20">
-                        <h4 class="heading font-bold">Full Br/aces</h4>
+                        <h4 class="heading font-bold">Full Braces</h4>
                         <p class="mb-0 mb-10">Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
                         <a href="/" class="link-primary">More Info..</a>
                     </div>
@@ -289,7 +290,7 @@ function Home() {
                     <h3 class="heading text-white font-bold">Dental Tourism in Canada</h3>
                     <h5 class="text-white">Know everything about visa, stay and the procedures</h5>
                     <p class="text-white opacity-08 mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="/hy-us-1.html" class="btn btn-secondary">Get in Touch</a>
+                    <Link to='/Contact' class="btn btn-secondary">Get in Touch</Link>
                 </div>
                 <div class="col-lg-3 mt-20 mb-lg-40">
                     <div class="counter-box-1">
@@ -377,7 +378,7 @@ function Home() {
                     <p class="h5 text-center text-lg-left mb-0">Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </div>
                 <div class="col-lg-5 mt-20 mb-20 text-center">
-                    <a href="/ook-appointment-form.html" class="btn btn-primary btn-lg mr-20"> Get in Touch</a>
+                    <Link to='/Contact' class="btn btn-primary btn-lg mr-20">Get in Touch</Link>
                 </div>
             </div>
         </div>
@@ -526,7 +527,7 @@ function Home() {
                     </div>
                     <div class="col-lg-6 mt-10 mb-10 text-right">
                         <p class="mb-0 footer-text text-lg-right text-center">&copy; 2021 All Rights Reserved.
-                            <a href="/ttp://wwsthemes.com/" target="_blank" class="font-semi-bold">WWS THEMES</a>
+                     
                         </p>
                     </div>
                 </div>
@@ -534,9 +535,9 @@ function Home() {
         </div>
     </footer>
 
-    <div id="back"><i class="ion-chevron-up-sharp"></i></div>
+    {/* <div id="back"><i class="ion-chevron-up-sharp"></i></div> */}
 
-    <div class="modal zoom-in fade" id="modal-welcome" data-open-onload="true" data-open-delay="0" tabindex="-1" role="dialog">
+    {/* <div class="modal zoom-in fade" id="modal-welcome" data-open-onload="true" data-open-delay="0" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" >
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion-close-sharp"></i></button>
@@ -547,15 +548,14 @@ function Home() {
                                 <h5 class="heading font-bold font-16 text-primary mb-10">Dental Care</h5>
                                 <h5 class="heading font-bold h3 text-secondary">By Expert Professionals</h5>
                                 <p class="mb-30">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <a href="/ontact-1.html" class="btn btn-primary">Get in touch
-                                </a>
+                                <Link to="/Contact" class="btn btn-primary">Get in touch </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>  */}
 
     <div class="modal fade zoom-in" id="modal-video" data-open-onload="false" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

@@ -40,9 +40,21 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $Appointment=new Appointment();
-        $Appointment->dateTime=$request->dateTime;
-        $Appointment->save();
+        $request->validate([
+            'firstname', //reminder to change the values after fetching user info
+            'lastname',
+            'phonenumber',
+            'email',
+            'age',
+            'message',
+            'time',
+            'allergy1',
+            'allergy2',
+            'allergy3',
+            'services',
+            'user_id'
+            ]);
+            return Appointment::create($request->all());
     }
 
     /**
