@@ -195,36 +195,7 @@ function About() {
         </div>
     </div>
 
-    <div class="container mt-80 mb-80">
-        <div class="row">
-            <div class="col-12 col-lg-3 border-bottom border-lg-right p-60">
-                <img src="images/logo-1.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 border-bottom border-lg-right p-60" >
-                <img src="images/logo-2.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 border-bottom border-lg-right p-60">
-                <img src="images/logo-7.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 border-bottom p-60">
-                <img src="images/logo-5.png" class="img-fluid" alt="" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-3 border-bottom border-lg-bottom-0 border-lg-right p-60">
-                <img src="images/logo-8.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 border-bottom border-lg-bottom-0 border-lg-right p-60">
-                <img src="images/logo-6.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 border-bottom border-lg-bottom-0 border-lg-right p-60">
-                <img src="images/logo-1.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-12 col-lg-3 p-60">
-                <img src="images/logo-4.png" class="img-fluid" alt="" />
-            </div>
-        </div>
-    </div>
+  
 
 
     <Footer />

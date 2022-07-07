@@ -5,7 +5,7 @@ import Navbar from '../layouts/Navbar'
 function Home() {
     return (
         <>
-            <Navbar />
+        
             <div className="pt-120 pb-120" style={{ backgroundImage: 'url(images/1920-800-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center left' }} >
                 <div className="container">
                     <div className="row justify-content-end">
@@ -441,28 +441,7 @@ function Home() {
                 </div>
             </footer>
 
-            {/* <div id="back"><i className="ion-chevron-up-sharp"></i></div> */}
-
-            {/* <div className="modal zoom-in fade" id="modal-welcome" data-open-onload="true" data-open-delay="0" tabindex="-1" role="dialog">
-        <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div className="modal-content" >
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close"><i className="ion-close-sharp"></i></button>
-                <div className="modal-body">
-                    <div className="container-fluid">
-                        <div className="row justify-content-end">
-                            <div className="col-lg-6">
-                                <h5 className="heading font-bold font-16 text-primary mb-10">Dental Care</h5>
-                                <h5 className="heading font-bold h3 text-secondary">By Expert Professionals</h5>
-                                <p className="mb-30">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <Link to="/Contact" className="btn btn-primary">Get in touch </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  */}
-
+         
             <div className="modal fade zoom-in" id="modal-video" data-open-onload="false" tabindex="-1" role="dialog">
                 <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div className="modal-content">

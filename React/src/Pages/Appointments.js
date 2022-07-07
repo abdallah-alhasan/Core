@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Footer from '../layouts/Footer'
 import Navbar from '../layouts/Navbar'
 
 function Appointments() {
@@ -85,7 +86,7 @@ function Appointments() {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="heading bold">Book Appointment</h1>
+                            <h1 class="heading bold text-left">Book Appointment</h1>
                         </div>
                     </div>
                 </div>
@@ -286,7 +287,7 @@ function Appointments() {
                         <aside className="sidebar pl-lg-20">
                             <div className="widget widget-text pt-0">
                                 <h5 className="heading d-flex align-items-center"><i className="ion-help-circle-outline icon-left"></i>Need Help?</h5>
-                                <p className="normal">In case of problems in filling out the form, pleease do let us know.</p>
+                                <p className="normal text-left">In case of problems in filling out the form, pleease do let us know.</p>
                                 <p className="h6 d-flex align-items-top mb-0"><i className="ion-mail-outline icon-left text-primary"></i>contact@example.com</p>
                                 <p className="h6 d-flex align-items-center mb-0"><i className="ion-call-outline icon-left text-primary"></i>[00] 21-562-5625</p>
                             </div>
@@ -351,6 +352,7 @@ function Appointments() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </React.Fragment>
     )
 }
