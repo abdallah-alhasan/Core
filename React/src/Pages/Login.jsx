@@ -29,31 +29,31 @@ const Login = () => {
     const handleSubmit = async (e) => {
         // e.preventDefault();
 
-        try {
-           
-
-            fetch('http://127.0.0.1:8000/api/user').then(res => res.json()).then(data => {
+       
+           useEffect(
+            fetch('http://127.0.0.1:8000/api/user').then(res => res.json().then(data => {
                 setDataBase(data);
-            },
-                dataBase.map(user => {
+            
+                data.map(user => {
                     if (user.email === email && user.password === password)
                     {
                         setSuccess(true);
                         setAuth(user);
                         }
-                })
-            );
+              }  )})))
+            
+
          
             // setAuth({ email, password });
             // setEmail('');
             // setPassword('');
-        } catch (err) {
-                setErrMsg('Login Failed');
-            }
-        errRef.current.focus();
+        // } catch (err) {
+        //         setErrMsg('Login Failed');
+        //     }
+        // errRef.current.focus();
         
-        console.log(success);
-        }
+        // console.log(success);
+        // }
    
     return (
         <>
