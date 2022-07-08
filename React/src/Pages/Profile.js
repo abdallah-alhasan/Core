@@ -38,22 +38,22 @@ Axios.post('https://jsonplaceholder.typicode.com/comments' ,{
 
 
     return (
-        <div className='app'>
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="heading bold text-left">Profile</h1>
+        <div classNameName='app'>
+            <div className="page-header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h1 className="heading bold text-left">Profile</h1>
                         </div>
                     </div>
                 </div>
-                <div class="breadcrumb-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul class="breadcrumb">
+                <div className="breadcrumb-wrapper">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <ul className="breadcrumb">
                                     <li><a href="/">Home</a></li>
-                                    <li class="active">Profile</li>
+                                    <li className="active">Profile</li>
                                 </ul>
                             </div>
                         </div>
@@ -61,53 +61,53 @@ Axios.post('https://jsonplaceholder.typicode.com/comments' ,{
                 </div>
             </div>
 
-            <div class="container mt-60">
-                <div class="row">
-                    <div class="col-lg-4 mt-20">
-                        <div class="doctor-img">
-                            <img src="images/tooth.png" class="img-fluid" alt="" />
+            <div className="container mt-60">
+                <div className="row">
+                    <div className="col-lg-4 mt-20">
+                        <div className="doctor-img">
+                            <img src="images/tooth.png" className="img-fluid" alt="" />
                         </div>
                     </div>
-                    <div class="col-lg-8 mt-20">
-                        <div class="doctor-details text-left">
-                            <h5 class="heading font-bold text-primary">Profile</h5>
-                            <h3 class="heading font-bold mb-10"> Welcome Dr. Mike Hendricks</h3>
-                            <hr class="hr-1 ml-0" />
+                    <div className="col-lg-8 mt-20">
+                        <div className="doctor-details text-left">
+                            <h5 className="heading font-bold text-primary">Profile</h5>
+                            <h3 className="heading font-bold mb-10"> Welcome Dr. Mike Hendricks</h3>
+                            <hr className="hr-1 ml-0" />
 
 
 
                             <form>
-                                <div class="form-row">
+                                <div className="form-row">
 
-                                <div class="form-group col-md-6">
+                                <div className="form-group col-md-6">
                                         <label for="inputPassword4">FullName</label>
-                                        <input type="text" class="form-control" name='name' id="inputPassword4" placeholder="Password" />
+                                        <input type="text" className="form-control" name='name' id="inputPassword4" placeholder="Password" />
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-6">
                                         <label for="inputEmail4">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" />
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" />
                                     </div>
                                    
                                 </div>
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="inputAddress">Address</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
+                                    <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
                                         <label for="inputCity">PhoneNumber</label>
-                                        <input type="text" class="form-control" id="inputCity" placeholder='0770000000' />
+                                        <input type="text" className="form-control" id="inputCity" placeholder='0770000000' />
                                     </div>
                                   
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-6">
                                         <label for="inputZip">Age</label>
-                                        <input type="number" class="form-control" id="inputZip" />
+                                        <input type="number" className="form-control" id="inputZip" />
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Edit</button>
+                                <button type="submit" className="btn btn-primary">Edit</button>
                             </form>
 
 
@@ -120,39 +120,39 @@ Axios.post('https://jsonplaceholder.typicode.com/comments' ,{
 
 
 
-            <div class="bg-primary pt-60 pb-60 mt-80" style={{ backgroundImage: 'url(images/world-map-2.png)', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '50%' }}>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-6 mt-20 mb-20">
-                            <div class="counter-box-1 text-center">
-                                <div class="fact-number text-white">
-                                    <span class="fact-count" data-from="0" data-to="300" data-speed="3000">0</span>+
+            <div className="bg-primary pt-60 pb-60 mt-80" style={{ backgroundImage: 'url(images/world-map-2.png)', backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '50%' }}>
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-lg-3 col-md-6 mt-20 mb-20">
+                            <div className="counter-box-1 text-center">
+                                <div className="fact-number text-white">
+                                    <span className="fact-count" data-from="0" data-to="300" data-speed="3000">0</span>+
                                 </div>
-                                <h5 class="heading font-semi-bold text-white mb-0">Surgeries</h5>
+                                <h5 className="heading font-semi-bold text-white mb-0">Surgeries</h5>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mt-20 mb-20">
-                            <div class="counter-box-1 text-center">
-                                <div class="fact-number text-white">
-                                    <span class="fact-count" data-from="0" data-to="700" data-speed="3000">0</span>+
+                        <div className="col-lg-3 col-md-6 mt-20 mb-20">
+                            <div className="counter-box-1 text-center">
+                                <div className="fact-number text-white">
+                                    <span className="fact-count" data-from="0" data-to="700" data-speed="3000">0</span>+
                                 </div>
-                                <h6 class="heading font-semi-bold text-white mb-0">Patients</h6>
+                                <h6 className="heading font-semi-bold text-white mb-0">Patients</h6>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mt-20 mb-20">
-                            <div class="counter-box-1 text-center">
-                                <div class="fact-number text-white">
-                                    <span class="fact-count" data-from="0" data-to="15" data-speed="3000"></span>+
+                        <div className="col-lg-3 col-md-6 mt-20 mb-20">
+                            <div className="counter-box-1 text-center">
+                                <div className="fact-number text-white">
+                                    <span className="fact-count" data-from="0" data-to="15" data-speed="3000"></span>+
                                 </div>
-                                <h6 class="heading font-semi-bold text-white mb-0">Years Experience</h6>
+                                <h6 className="heading font-semi-bold text-white mb-0">Years Experience</h6>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mt-20 mb-20">
-                            <div class="counter-box-1 text-center">
-                                <div class="fact-number text-white">
-                                    <span class="fact-count" data-from="0" data-to="1500" data-speed="3000">0</span>+
+                        <div className="col-lg-3 col-md-6 mt-20 mb-20">
+                            <div className="counter-box-1 text-center">
+                                <div className="fact-number text-white">
+                                    <span className="fact-count" data-from="0" data-to="1500" data-speed="3000">0</span>+
                                 </div>
-                                <h6 class="heading font-semi-bold text-white mb-0">consultations</h6>
+                                <h6 className="heading font-semi-bold text-white mb-0">consultations</h6>
                             </div>
                         </div>
                     </div>
@@ -166,14 +166,14 @@ Axios.post('https://jsonplaceholder.typicode.com/comments' ,{
                         <h3 class="heading font-bold">We Love To Hear From You </h3>
                         <p class="h5 mb-30">Tell Us What You Think About Your Experience in Our clinic.</p>
                     
-                        <ul class="social social-2x d-inline-flex mt-20">
-                            <li><a class="facebook" href="#"><i class="ion-logo-facebook"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="ion-logo-twitter"></i></a></li>
-                            <li><a class="google" href="#"><i class="ion-logo-google"></i></a></li>
-                            <li><a class="whatsapp" href="#"><i class="ion-logo-whatsapp"></i></a></li>
+                        <ul className="social social-2x d-inline-flex mt-20">
+                            <li><a className="facebook" href="#"><i className="ion-logo-facebook"></i></a></li>
+                            <li><a className="twitter" href="#"><i className="ion-logo-twitter"></i></a></li>
+                            <li><a className="google" href="#"><i className="ion-logo-google"></i></a></li>
+                            <li><a className="whatsapp" href="#"><i className="ion-logo-whatsapp"></i></a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-7 mt-20">
+                    <div className="col-lg-7 mt-20">
                         <form>
                             <div class="form-group">
                                 <input class="form-control" type="text" name='name' placeholder="Your Full Name" value={name} onChange={(e)=> setName(e.target.value)} />

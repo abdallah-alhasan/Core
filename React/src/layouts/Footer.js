@@ -41,26 +41,25 @@ function Footer() {
                                 </div>
                             </div>
                             <div className="col-lg-4">
-                               
                                 <div className="widget widget-timings">
                                     <h5 className="heading font-bold">Hospital Timings</h5>
                                     <table className="table table-bordered footer-text">
-                                        <tr>
-                                            <td>Mon - Fri</td>
-                                            <td>9:00 am to 6:00 pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Saturday</td>
-                                            <td>10:00 am to 1:00 pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sunday</td>
-                                            <td>Weekly Off</td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mon - Fri</td>
+                                                <td>9:00 am to 6:00 pm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saturday</td>
+                                                <td>10:00 am to 1:00 pm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sunday</td>
+                                                <td>Weekly Off</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
-                        
-                              
                             </div>
                         </div>
                     </div>

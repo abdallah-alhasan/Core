@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Footer from '../layouts/Footer'
-import Navbar from '../layouts/Navbar'
 
 function Appointments() {
 
@@ -30,7 +28,7 @@ function Appointments() {
     var month = pad2(date.getMonth() + 1);
     var day = pad2(date.getDate());
     var year = date.getFullYear();
-    //test data
+
     const [formData, setFormData] = useState({
         user_id : '',
         firstname: '', 
@@ -43,14 +41,23 @@ function Appointments() {
         allergy1:'',
         allergy2:'',
         allergy3:'',
-        // whitening:'', REMINDER TO FIX THIS PUG
-        // cavity_filling:'',
-        // full_braces:'',
-        // capping:'',
-        // implants:'',
-        // root_canal:'',
-        services:''
+        services:'',
+        whitening:'', 
+        cavity_filling:'',
+        full_braces:'',
+        capping:'',
+        implants:'',
+        root_canal:'',
     })
+
+    const [appointmentConformation, setAppointmentConformation] = useState('')
+    const services = []
+    formData.whitening && services.push('whitening')
+    formData.cavity_filling && services.push('cavity filling')
+    formData.full_braces && services.push('full braces')
+    formData.capping && services.push('capping')
+    formData.implants && services.push('implants')
+    formData.root_canal && services.push('root canal')
 
     const handleChange = (event) => {
         const { name, value, checked, type } = event.target
@@ -67,26 +74,26 @@ function Appointments() {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({...formData , services:services.join(',')})
         };
         async function addAppointment(){
             const res  = await fetch('http://127.0.0.1:8000/api/addappointment', requestOptions)
             const data = await res.json()
+            data && setAppointmentConformation(true)
+            
         }
         
         addAppointment()
             
         }
-    
 
-    console.log(formData)
     return (
         <React.Fragment>
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="heading bold text-left">Book Appointment</h1>
+            <div className="page-header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h1 className="heading bold">Book Appointment</h1>
                         </div>
                     </div>
                 </div>
@@ -95,8 +102,8 @@ function Appointments() {
                         <div className="row">
                             <div className="col-lg-12">
                                 <ul className="breadcrumb">
-                                    <li><a href="/">Home</a></li>
-                                    <li className="active ">Book Appointment</li>
+                                    <li><a href="/ndex-hospital-classNameic.html">Home</a></li>
+                                    <li className="active">Book Appointment</li>
                                 </ul>
                             </div>
                         </div>
@@ -180,7 +187,7 @@ function Appointments() {
                                     <div className="form-group">
                                         <select
                                             className="form-control"
-                                            tabindex="-98"
+                                            tabIndex="-98"
                                             name='time'
                                             value={formData.date}
                                             onChange={handleChange}
@@ -235,37 +242,37 @@ function Appointments() {
                                                 <input type="checkbox" className="custom-control-input" name='whitening' id="Whitening" checked={formData.whitening}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="Whitening">Whitening</label>
+                                                <label className="custom-control-label" htmlFor="Whitening">Whitening</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='cavity_filling' id="cavity_filling" value={formData.cavity_filling}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="cavity_filling">Cavity Filling</label>
+                                                <label className="custom-control-label" htmlFor="cavity_filling">Cavity Filling</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='full_braces' id="full_braces" value={formData.full_braces}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="full_braces">Full Braces</label>
+                                                <label className="custom-control-label" htmlFor="full_braces">Full Braces</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input"name='root_canal' id="root_canal" value={formData.root_canal}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="root_canal">Root Canal</label>
+                                                <label className="custom-control-label" htmlFor="root_canal">Root Canal</label>
                                             </div>
                                             <div className="custom-control custom-checkbox mb-10">
                                                 <input type="checkbox" className="custom-control-input" name='implants' value={formData.implants} id="implants" 
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="implants">Implants</label>
+                                                <label className="custom-control-label" htmlFor="implants">Implants</label>
                                             </div>
                                             <div className="custom-control custom-checkbox">
                                                 <input type="checkbox" className="custom-control-input" name='capping' value={formData.capping} id="capping" 
                                                     onChange={handleChange}
                                                 />
-                                                <label className="custom-control-label" for="capping">Capping</label>
+                                                <label className="custom-control-label" htmlFor="capping">Capping</label>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -278,63 +285,26 @@ function Appointments() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="form-group">
-                                <button className="btn btn-primary" type="submit" onClick={handleClick}><i className="ion-paper-plane-outline icon-left"></i> Book Appointment</button>
-                            </div>
+                            {!appointmentConformation && <div className="form-group">
+                                <button className="btn btn-primary" data-toggle='modal' type="submit" onClick={handleClick}><i className="ion-paper-plane-outline icon-left"></i> Book Appointment</button>
+                            </div>}
                         </form>
+                        {appointmentConformation &&
+                            <div className="alert alert-success" role="alert">
+                                <strong>Appointment added on {formData.time}</strong>
+                            </div> 
+                            }
                     </div>
                     <div className="col-lg-4 mt-40 mt-lg-0">
                         <aside className="sidebar pl-lg-20">
                             <div className="widget widget-text pt-0">
                                 <h5 className="heading d-flex align-items-center"><i className="ion-help-circle-outline icon-left"></i>Need Help?</h5>
-                                <p className="normal text-left">In case of problems in filling out the form, pleease do let us know.</p>
+                                <p className="normal">In case of problems in filling out the form, pleease do let us know.</p>
                                 <p className="h6 d-flex align-items-top mb-0"><i className="ion-mail-outline icon-left text-primary"></i>contact@example.com</p>
                                 <p className="h6 d-flex align-items-center mb-0"><i className="ion-call-outline icon-left text-primary"></i>[00] 21-562-5625</p>
                             </div>
                             <div className="widget widget-departments">
-                                <h5 className="heading d-flex align-items-center"><i className="ion-share-social-outline icon-left"></i>Departments</h5>
-                                <ul className="mb-0">
-                                    <li>
-                                        <a href="/epartment-detail-1.html">
-                                            <div className="dep-icon">
-                                                <i className="mw-brain"></i>
-                                            </div>
-                                            <h6 className="mb-0 dep-name">Neurology</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/epartment-detail-1.html">
-                                            <div className="dep-icon">
-                                                <i className="mw-tooth"></i>
-                                            </div>
-                                            <h6 className="mb-0 dep-name">Dental Care</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/epartment-detail-1.html">
-                                            <div className="dep-icon">
-                                                <i className="mw-waistline"></i>
-                                            </div>
-                                            <h6 className="mb-0 dep-name">General Health</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/epartment-detail-1.html">
-                                            <div className="dep-icon">
-                                                <i className="mw-eye"></i>
-                                            </div>
-                                            <h6 className="mb-0 dep-name">Eye Care</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/epartment-detail-1.html" className="pb-0">
-                                            <div className="dep-icon">
-                                                <i className="mw-blood-drop"></i>
-                                            </div>
-                                            <h6 className="mb-0 dep-name">Blood Bank</h6>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <img  src='images/650-650-1.jpg' alt='placeimage' style={{width:'100%', height:'100%'}} />
                             </div>
                             <div className="widget widget-social">
                                 <h5 className="heading d-flex align-items-center"><i className="ion-share-social-outline icon-left"></i>We're Social</h5>
