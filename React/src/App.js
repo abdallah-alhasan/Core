@@ -21,7 +21,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/:Comment_id' element={<About />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/book-an-appointment' element={<Appointments />} />
           {/* enter your routes here */}

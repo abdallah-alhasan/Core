@@ -1,11 +1,42 @@
-import React from 'react'
-import Footer from '../layouts/Footer'
-import Navbar from '../layouts/Navbar'
-
+import React, { useState ,useEffect } from 'react'
+import Axios from 'axios'
 
 
 
 function Profile() {
+
+    const [name,setName] = useState('');
+    const [comment,setComment] = useState('');
+    const [data,setData] = useState('');
+
+
+   
+    useEffect(() => {
+
+        Axios.get(`https://jsonplaceholder.typicode.com/comments`)
+        .then(res =>{
+
+            console.log("getting from" ,res.data)
+            setData(res.data)
+        }).catch(err=>console.log(err))
+    },[])
+
+
+const postData = (e) =>{
+
+e.preventDefault();
+Axios.post('https://jsonplaceholder.typicode.com/comments' ,{
+ name : name,
+ body : comment,
+
+}).then(res=> console.log("positing data" ,res))
+.catch(err =>console.log(err))
+
+}
+
+
+
+
     return (
         <div className='app'>
             <div class="page-header">
@@ -132,8 +163,8 @@ function Profile() {
                 <div class="row justify-content-center">
                     <div class="col-lg-5 mt-20">
                         <h5 class="heading font-bold text-primary">Get in Touch</h5>
-                        <h3 class="heading font-bold">Book your appointment</h3>
-                        <p class="h5 mb-30">Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3 class="heading font-bold">We Love To Hear From You </h3>
+                        <p class="h5 mb-30">Tell Us What You Think About Your Experience in Our clinic.</p>
                     
                         <ul class="social social-2x d-inline-flex mt-20">
                             <li><a class="facebook" href="#"><i class="ion-logo-facebook"></i></a></li>
@@ -145,42 +176,15 @@ function Profile() {
                     <div class="col-lg-7 mt-20">
                         <form>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Your Full Name" />
+                                <input class="form-control" type="text" name='name' placeholder="Your Full Name" value={name} onChange={(e)=> setName(e.target.value)} />
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Your Phone Number" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Your Email ID" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control date-select" type="text" placeholder="Your Date of Birth" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>Select Appointment Slot</option>
-                                            <option>9:00 p.m. - 12:00 p.m.</option>
-                                            <option>12:00 p.m. - 4:00 p.m.</option>
-                                            <option>4:00 p.m. - 8:00 p.m.</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                         
+                       
                             <div class="form-group">
-                                <textarea class="form-control" rows="4" placeholder="Special Message to Doctor"></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Special Message to Doctor" value={comment} onChange={(e)=> setComment(e.target.value)}></textarea>
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary" type="submit">Book Appointment</button>
+                            <div class="form-group text-left">
+                                <a href={data.id} class="btn btn-primary" type="submit" onClick={postData}>Submit Your Review</a>
                             </div>
                         </form>
                     </div>
