@@ -11,6 +11,7 @@ const Login = () => {
     const errRef = useRef();
     const [dataBase, setDataBase] = useState([]);
     const [email, setEmail] = useState('');
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
@@ -27,33 +28,35 @@ const Login = () => {
 
     
     const handleSubmit = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
-       
-           useEffect(
-            fetch('http://127.0.0.1:8000/api/user').then(res => res.json().then(data => {
+        try {
+           
+
+            fetch('http://127.0.0.1:8000/api/getallusers').then(res => res.json()).then(data => {
                 setDataBase(data);
-            
-                data.map(user => {
+            },
+                dataBase.map(user => {
+                    console.log(user.email)
                     if (user.email === email && user.password === password)
                     {
+                        localStorage.setItem('isloggedIn','1');
                         setSuccess(true);
                         setAuth(user);
                         }
-              }  )})))
-            
-
+                })
+            );
          
             // setAuth({ email, password });
             // setEmail('');
             // setPassword('');
-        // } catch (err) {
-        //         setErrMsg('Login Failed');
-        //     }
-        // errRef.current.focus();
+        } catch (err) {
+                setErrMsg('Login Failed');
+            }
+        errRef.current.focus();
         
-        // console.log(success);
-        // }
+        console.log(success);
+        }
    
     return (
         <>

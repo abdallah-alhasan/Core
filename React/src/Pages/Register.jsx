@@ -1,23 +1,30 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 function Register() {
+  const [data, setFormValue] = useState({firstname:'',lastname:'',email:'',password:''});
 
-  const [data,setData]= useState({fname:'',lname:'',email:'',password:''});
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const handelSubmit = (e) => {
-    e.preventDefault();
-    return fetch('http://127.0.0.1:8000/api/user', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
+  window.axios = require("axios");
+  const Submit = (event) => {
+    event.preventDefault();
+    const api = {
+      firstname:data.firstname,
+      lastname:data.lastname,
+      email:data.email,
+      password:data.password
+    };
+    console.log(data.email);
+    axios.post("http://127.0.0.1:8000/api/adduser", api);
+  };
   
-  }
+  // get data
+
+  const valueHandler = (event) => {
+    setFormValue({ ...data, [event.target.name]: event.target.value });
+  };
+
 
   
 
@@ -44,18 +51,18 @@ YOUR SMILE!</span>
                 <div className="card-body py-5 px-md-5">
                   <img src="images/logo.svg" alt="" className="logo" style={{ marginBottom: '30px' }} />
 
-                  <form onSubmit={handelSubmit}  >
+                  <form onSubmit={Submit}  >
                     {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
                     <div className="row">
                       <div className="col-md-6 mb-4">
                         <div className="form-outline">
-                          <input type="text" id="form3Example1" className="form-control" placeholder='First name'  onChange={(e) => setData(e.target.value)} />
+                          <input type="text" id="form3Example1" className="form-control" name='firstname' placeholder='First name'  onChange={valueHandler} />
                           {/* <label className="form-label" for="form3Example1">First name</label> */}
                         </div>
                       </div>
                       <div className="col-md-6 mb-4">
                         <div className="form-outline">
-                          <input type="text" id="form3Example2" className="form-control" placeholder='Last name' onChange={(e) => setData(e.target.value)} />
+                          <input type="text" id="form3Example2" className="form-control" name="lastname" placeholder='Last name' onChange={valueHandler} />
                           {/* <label className="form-label" for="form3Example2">Last name</label> */}
                         </div>
                       </div>
@@ -63,13 +70,13 @@ YOUR SMILE!</span>
 
                     {/* <!-- Email input --> */}
                     <div className="form-outline mb-4">
-                      <input type="email" id="form3Example3" className="form-control" placeholder='Email address' onChange={(e) => setData(e.target.value)} />
+                      <input type="email" id="form3Example3" className="form-control" name="email" placeholder='Email address' onChange={valueHandler} />
                       {/* <label className="form-label" for="form3Example3">Email address</label> */}
                     </div>
 
                     {/* <!-- Password input --> */}
                     <div className="form-outline mb-4">
-                      <input type="password" id="form3Example4" className="form-control" placeholder='Password' onChange={(e) => setData(e.target.value)} />
+                      <input type="password" id="form3Example4" className="form-control" name="password" placeholder='Password' onChange={valueHandler} />
                       {/* <label className="form-label" for="form3Example4">Password</label> */}
                     </div>
 
@@ -85,9 +92,9 @@ YOUR SMILE!</span>
                     {/* <!-- Register buttons --> */}
                     <div className="text-center">
 
-                      <button type="submit" className="btn btn-primary btn-block mb-4" onClick={() => navigate('/login')}>
+                      {/* <button type="submit" className="btn btn-primary btn-block mb-4" >
                         Login
-                      </button>
+                      </button> */}
                     </div>
                   </form>
                 </div>
