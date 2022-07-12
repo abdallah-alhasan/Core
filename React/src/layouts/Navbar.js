@@ -15,45 +15,6 @@ function Navbar() {
           <div className="container-lg">
             <div className="row no-gutters">
               <div className="col-md-12">
-                <div className="topbar-items">
-                  <ul className="topbar-social d-none d-lg-inline-flex">
-                    <li>
-                      <a href="/">
-                        <i className="ion-logo-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="ion-logo-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="ion-logo-youtube"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="ion-logo-vimeo"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="widgets">
-                    <li className="region-widget d-none d-lg-inline-flex">
-                      <i className="ion-earth"></i> Asia Pacific
-                    </li>
-                    <li className="email-widget d-none d-lg-inline-flex">
-                      <i className="ion-mail-outline"></i> hello@medwise.com
-                    </li>
-                    <li className="emergency-widget">
-                      <h4 className="emergency">
-                        <span className="sub-text">Emergency</span>
-                        <span className="number">123-909-909</span>
-                        <br />
-                      </h4>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -95,19 +56,21 @@ function Navbar() {
                 <li className="nav-item has-menu">
                   <a href="/contact">Contact</a>
                 </li>
-                {localStorage.getItem("isLoggedIn") == "1" && (
+               
+
+                {localStorage.getItem("isloggedIn") == "1" && (
                   <li className="nav-item has-menu">
                     <a
                       href="/Logout"
                       onClick={() => {
-                        localStorage.removeItem("isLoggedIn");
+                        localStorage.removeItem("isloggedIn");
                       }}
-                    >
+                      >
                       Logout
                     </a>
                   </li>
                 )}
-                {localStorage.getItem("isLoggedIn") != "1" && (
+                {localStorage.getItem("isloggedIn") != "1" && (
                   <li className="nav-item has-menu">
                     <a href="/login">Login</a>
                   </li>
